@@ -13,16 +13,14 @@ app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "/index.html"));
 });
 
-pp.post("/", function (req, res) {
+app.post("/", function (req, res) {
   let url = req.body.getdata;
 
   request.get({ url: url }, function (error, response, body) {
     res.send(body);
   });
 });
-
 app.use("/static", express.static("static"));
-
 app.listen(port);
 
 console.log("Your server is running on 8085 port");
