@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 var table = $("#datas").DataTable({ scrollX: true });
-
+console.log("test 12");
 table.clear().draw();
 
 const queryString = window.location.search;
@@ -13,13 +13,14 @@ if (urlParams.get("lang")) {
 
 if (default_lang == "fr") {
   $("#header_title, #main_title").text(
-    "Base de données sur les fromages du Canada"
+    "Base de données sur les fromages canadiens"
   );
   $("#current").text("FR");
+  $("#subtitle").text("Base de données sur les fromages canadiens");
 } else {
   $("#current").text("EN");
+  $("#subtitle").text("Canadian Cheese Database");
 }
-
 $.ajax({
   url: "#",
   type: "post",

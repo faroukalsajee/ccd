@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/assets/css/dataTables.min.css">
+     <title class="navbar-brand" href="#" id='main_title'>Canadian Cheese Database</title>
+    <script type="text/javascript">
+    var default_lang = 'en';
+    </script>
+    <style type="text/css">
+    table.dataTable thead th {
+        white-space: nowrap;
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#" id='header_title'>Canadian Cheese Database</a>
+            <div class="dropdown my-2">
+                <a class="btn btn-secondary btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    Languages - <span id='current'></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="?lang=en">English</a>
+                    <a class="dropdown-item" href="?lang=fr">Français</a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 style="margin: 20px;text-align: center; width: 100%;" id='subtitle'>
+            Base de données sur les fromages canadiens</h1>
+        <div class="row">
+            <table id="datas" class="table table-striped" width="100%">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Manufacturer</th>
+                        <th>Man. Prov Code</th>
+                        <th>Man Type</th>
+                        <th>% Fat</th>
+                        <th>% Moisture</th>
+                        <th>Flavour</th>
+                        <th>Characteristics</th>
+                        <th>Ripening</th>
+                        <th>Organic</th>
+                        <th>Category</th>
+                        <th>Milk Type</th>
+                        <th>Milk Treatment</th>
+                        <th>Rind Type</th>
+                        <th>Last Update Date</th>
+                        <th>Website</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript" src="static/assets/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="static/assets/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="static/assets/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="static/assets/js/dataTables.bootstrap5.min.js"></script>
+    <script type="text/javascript" src="static/script.js"></script>
+</body>
+
+</html>
