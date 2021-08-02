@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-var table = $("#datas").DataTable({ scrollX: true });
+let table = $("#datas").DataTable({ scrollX: true });
 table.clear().draw();
 
 const queryString = window.location.search;
@@ -27,10 +27,10 @@ $.ajax({
   data: { getdata: "https://od-do.agr.gc.ca/canadianCheeseDirectory.json" },
   success: function (response) {
     $.each(response.CheeseDirectory, function (index, value) {
-      var organic = "Yes";
+      let organic = "Yes";
       if (value.Organic == 0) organic = "No";
 
-      var name = value.CheeseNameEn;
+      let name = value.CheeseNameEn;
 
       if (default_lang == "fr") {
         if (value.CheeseNameFr !== "") {
