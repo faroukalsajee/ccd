@@ -24,7 +24,7 @@ $.ajax({
   url: "#",
   type: "post",
   dataType: "json",
-  data: { getdata: "https://od-do.agr.gc.ca/canadianCheeseDirectory.json" },
+  data: {},
   success: function (response) {
     $.each(response.CheeseDirectory, function (index, value) {
       let organic = "Yes";
