@@ -1,27 +1,25 @@
-/* eslint-disable no-undef */
 let express = require("express");
-let bodyParser = require("body-parser");
 let path = require("path");
 let request = require("request");
 
+const apiUrl = "https://od-do.agr.gc.ca/canadianCheeseDirectory.json";
+
 let app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 const port = 8085;
 
-app.get("/", function (req, res) {
+app.get("/", function (_req, res) {
   res.sendFile(path.join(__dirname, "/index.html"));
 });
 
-app.post("/", function (req, res) {
-  let url = req.body.getdata;
-
-  request.get({ url: url }, function (error, response, body) {
+app.post("/", function (_req, res) {
+  request.get({ url: apiUrl }, function (_error, _response, body) {
     res.send(body);
   });
 });
 app.use("/static", express.static("static"));
 app.listen(port);
 
-console.log("Your server is running on 8085 port");
-console.log("http://localhost:8085/");
+console.log(`Your server is running on port: ${port}`);
+console.log(`http://localhost:${port}/`);
